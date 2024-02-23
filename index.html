@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guilherme Campelo - Site Pessoal</title>
+    <style>
+        /* Estilos para o corpo do documento */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Estilos para o cabeçalho */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilos para a barra de navegação */
+        nav {
+            background-color: #666;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: relative;
+        }
+
+        nav::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: calc(100% - 50px); /* Altura do header + altura do footer */
+            background-color: #999;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para as abas de conteúdo */
+        .tab-content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilos para a imagem dentro da aba "Sobre Mim" */
+        #sobre img {
+            max-width: 25%; /* Definindo a largura máxima como 25% do tamanho original */
+            height: auto; /* Mantém a proporção da imagem */
+            display: block; /* Remove margens brancas abaixo da imagem */
+            margin: 0 auto 20px; /* Adiciona margem inferior para espaçamento */
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guilherme Campelo</h1>
+    </header>
+    <nav>
+        <a href="#" onclick="showTab('sobre')">Sobre</a>
+        <a href="#" onclick="showTab('hobbies')">Hobbies</a>
+        <a href="#" onclick="showTab('contato')">Contato</a>
+    </nav>
+    <div id="sobre" class="tab-content">
+        <h2>Sobre Mim</h2>
+        <img src=https://i.imgur.com/Eew3KSu.jpeg alt="Foto minha">
+        <p>Me chamo Guilherme, nasci no Brasil e atualmente sou estudante de ciência da computação no <a href="https://portal.cin.ufpe.br/">Centro de Informática da UFPE</a>. Estou em constante busca por conhecimento e experiências que me desafiem na área de tecnologia. Meus principais objetivos são contribuir para projetos inovadores e colaborar com profissionais talentosos. Tenho o objetivo de estagiar em uma empresa de cybersegurança durante a faculdade e morar na Europa.</p>
+    </div>
+    <div id="hobbies" class="tab-content">
+        <h2>Hobbies</h2>
+        <p>Para passar o tempo, gosto de desenhar, tocar violão, ir para a academia, programar, entrar em contato com a natureza e experimentar novas receitas na cozinha.Esses hobbies me ajudam a encontrar equilíbrio entre faculdade e lazer.</p>
+        <p>Também adoro ver filmes e séries, minha saga de filmes favorita é Creed.</p>
+        <img src=data:image/jpeg;base64,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 alt="contato">
+    </div>
+    <div id="contato" class="tab-content">
+        <h2>Contato</h2>
+        <p>Você pode entrar em contato comigo pelo e-mail: gocc@cin.ufpe.br. </p>
+        <img src=https://tenor.com/pt-BR/view/pinguim-penguin-club-club-penguin-cp-gif-13248426.gif alt="contato">
+        
+        
+    </div>
+    <footer>
+        &copy; 2024 Guilherme Campelo - Site Pessoal
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            var tabs = document.getElementsByClassName('tab-content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = 'none';
+            }
+            document.getElementById(tabName).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
